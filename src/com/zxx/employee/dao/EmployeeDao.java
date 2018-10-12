@@ -5,8 +5,11 @@ package com.zxx.employee.dao;
  * @date 2018/10/11 22:24
  */
 
+import com.zxx.employee.domain.Employee;
+
 /**
  * 员工管理Dao层接口
  */
-public class EmployeeDao {
+public interface EmployeeDao {
+    Employee findByUsernameAndPassword(Employee employee);
 }

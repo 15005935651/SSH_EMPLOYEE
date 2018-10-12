@@ -5,8 +5,16 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-    <package name="default" extends="struts-default" namespace="/">
 
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="ssh" extends="struts-default" namespace="/">
+
+       <action name="employee_*" class="employeeAction" method="login">
+           <result name="input">/index.jsp</result>
+           <result name="success" type="redirect">frame.html</result>
+       </action>
 
     </package>
 </struts>

@@ -31,38 +31,35 @@
         </div>
     </div>
 </div>
-<s:form name="employee_login" method="POST" namespace="/">
-    <form action="frame.html" method="post">
-        <div class="loginBox">
-            <div class="login_cont">
-                <ul class="login">
-                    <li class="l_tit">用户名</li>
-                    <li class="mb_10"><input type="text" name="username" class="login_input user_icon"></li>
-                    <li class="l_tit">密码</li>
-                    <li class="mb_10"><input type="password" name="password" class="login_input user_icon"></li>
+<s:form action="employee_login" method="POST" namespace="/">
+    <div class="loginBox">
+        <div class="login_cont">
+            <ul class="login">
+                <li class="l_tit">用户名</li>
+                <li class="mb_10"><input type="text" name="username" class="login_input user_icon"></li>
+                <li class="l_tit">密码</li>
+                <li class="mb_10"><input type="password" name="password" class="login_input user_icon"></li>
 
-                    <li><input type="submit" value="" class="login_btn"></li>
+                <li><input type="submit" value="" class="login_btn"></li>
+            </ul>
+            <div class="login_partners">
+                <p class="l_tit">使用合作方账号登陆网站</p>
+                <ul class="login_list clearfix">
+                    <li><a href="#">QQ</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">网易</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">腾讯微薄</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">腾讯微薄</a></li>
                 </ul>
-                <div class="login_partners">
-                    <p class="l_tit">使用合作方账号登陆网站</p>
-                    <ul class="login_list clearfix">
-                        <li><a href="#">QQ</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="#">网易</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="#">新浪微博</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="#">腾讯微薄</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="#">新浪微博</a></li>
-                        <li><span>|</span></li>
-                        <li><a href="#">腾讯微薄</a></li>
-                    </ul>
-                </div>
             </div>
-
         </div>
-    </form>
+    </div>
 </s:form>
 <div class="hr_25"></div>
 <div class="footer">

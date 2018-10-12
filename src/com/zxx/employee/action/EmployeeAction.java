@@ -1,8 +1,10 @@
 package com.zxx.employee.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.zxx.employee.domain.Employee;
+import com.zxx.employee.service.EmployeeService;
 
 /**
  * @author zxx
@@ -16,9 +18,27 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
         return employee;
     }
 
-    //登录执行的方法
+    /**
+     * 登录执行的方法
+     * @return
+     */
     public String login(){
-        return NONE;
+        System.out.println("login()执行了");
+        Employee existEmployee = employeeService.login(employee);
+        if(existEmployee == null){
+            this.addActionError("用户名或密码错误！");
+            return INPUT;
+        }else {
+            ActionContext.getContext().getSession().put("exitEmployee",existEmployee);
+            return SUCCESS;
+        }
+    }
+
+
+    //注入业务层
+    private EmployeeService employeeService;
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
 

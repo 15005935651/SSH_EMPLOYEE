@@ -33,6 +33,7 @@
 </div>
 <s:form action="employee_login" method="POST" namespace="/">
     <div class="loginBox">
+        <h3><s:actionerror/></h3>
         <div class="login_cont">
             <ul class="login">
                 <li class="l_tit">用户名</li>

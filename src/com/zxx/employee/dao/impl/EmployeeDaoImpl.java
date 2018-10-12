@@ -2,7 +2,6 @@ package com.zxx.employee.dao.impl;
 
 import com.zxx.employee.dao.EmployeeDao;
 import com.zxx.employee.domain.Employee;
-import org.junit.Test;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import java.util.List;

@@ -5,17 +5,12 @@
   Time: 16:26
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
 <frameset rows="80,*">
-    <frame name="top" src="${pageContext.request.contextPath}/frame/top.html">
+    <frame name="top" src="${pageContext.request.contextPath}/frame/top.jsp">
     <frameset cols="150,*" id="main">
 
-        <frame src="${pageContext.request.contextPath}/frame/left.html">
-        <frame name="right" src="frame/right.html">
+        <frame src="${pageContext.request.contextPath}/frame/left.jsp">
+        <frame name="right" src="frame/right.jsp">
     </frameset>
 </frameset>
-</html>
+

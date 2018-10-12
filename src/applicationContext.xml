@@ -44,15 +44,28 @@
         <property name="employeeService" ref="employeeService"/>
     </bean>
 
+    <bean id="departmentAction" class="com.zxx.employee.action.DepartmentAction" scope="prototype">
+        <property name="departmentService" ref="departmentService"/>
+    </bean>
+    
     <!--配置service层-->
     <bean id="employeeService" class="com.zxx.employee.service.impl.EmployeeServiceImpl">
         <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+
+    <bean id="departmentService" class="com.zxx.employee.service.impl.DepartmentServiceImpl">
+        <property name="departmentDao" ref="departmentDao"/>
     </bean>
 
     <!--配置dao层-->
     <bean id="employeeDao" class="com.zxx.employee.dao.impl.EmployeeDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <bean id="departmentDao" class="com.zxx.employee.dao.impl.DepartmentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
 
     <!--配置事物管理器-->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

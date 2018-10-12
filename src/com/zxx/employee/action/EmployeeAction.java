@@ -29,7 +29,7 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
             this.addActionError("用户名或密码错误！");
             return INPUT;
         }else {
-            ActionContext.getContext().getSession().put("exitEmployee",existEmployee);
+            ActionContext.getContext().getSession().put("existEmployee",existEmployee);
             return SUCCESS;
         }
     }

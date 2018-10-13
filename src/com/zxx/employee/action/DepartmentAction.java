@@ -1,8 +1,10 @@
 package com.zxx.employee.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.zxx.employee.domain.Department;
+import com.zxx.employee.domain.PageBean;
 import com.zxx.employee.service.DepartmentService;
 
 /**
@@ -38,8 +40,12 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
     /**
      * 提供一个查询的方法
      */
-    private String findAll(){
-        return NONE;
+    public String findAll(){
+        System.out.println("findall执行了");
+        PageBean<Department> pageBean = departmentService.findByPage(currPage);
+        //将pageBean存入到值栈中
+        ActionContext.getContext().getValueStack().push(pageBean);
+        return "findAll";
     }
 
 }

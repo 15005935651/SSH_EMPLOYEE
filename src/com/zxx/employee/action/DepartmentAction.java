@@ -48,4 +48,44 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
         return "findAll";
     }
 
+    /**
+     * 添加跳转
+     */
+    public String saveUI(){
+        return "saveUI";
+    }
+    /**
+     * 添加部门的执行方法
+     */
+    public String save(){
+
+        departmentService.save(department);
+
+        return "saveSuccess";
+
+    }
+    /**
+     * 编辑部门的方法
+     */
+    public String edit(){
+        department = departmentService.findByID(department.getDid());
+        return "editSuccess";
+    }
+    /**
+     * 修改部门的执行方法
+     */
+    public String update(){
+        departmentService.update(department);
+        return "updateSuccess";
+    }
+    /**
+     * 删除部门执行的方法
+     */
+    public String delete(){
+        department = departmentService.findByID(department.getDid());
+        departmentService.delete(department);
+        return "deleteSuccess";
+    }
+
+
 }

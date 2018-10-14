@@ -9,6 +9,16 @@ import java.util.List;
  * @date 2018/10/12 22:13
  */
 public interface DepartmentDao {
+
+    void delete(Department department);
+
+
     int findCount() ;
     List<Department> findByPage(int begin, int pageSize);
+
+    void save(Department department);
+
+    Department findById(Integer did);
+
+    void update(Department department);
 }

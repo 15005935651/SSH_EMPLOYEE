@@ -24,19 +24,27 @@
 </head>
 <body>
 <s:form action="department_quare" method="POST" namespace="/">
-<table border="0" width="900px">
-    <tr>
-        <td align="center" style="font-size:24px; color:#999"> 部门管理</td>
-    </tr>
-</table>
+    <table border="0" width="900px">
+        <tr>
+            <td align="center" style="font-size:24px; color:#666"> 部门管理</td>
+        </tr>
+        <tr>
+            <td align="right" > <a href="${pageContext.request.contextPath}/department_saveUI.action">添加</a></td>
+        </tr>
+    </table>
 
 <br/>
+
+
+
 
 <table cellspacing="0" border="1" class="table1">
     <thead>
     <tr>
         <th width="450">部门名称</th>
         <th width="450">职责</th>
+        <th width="450">编辑</th>
+        <th width="450">删除</th>
     </tr>
     </thead>
     <tbody>
@@ -45,6 +53,8 @@
     <tr>
         <td align="center"><s:property value="#d.dname"/></td>
         <td align="center"><s:property value="#d.ddesc"/></td>
+        <td align="center"><a href="${pageContext.request.contextPath}/department_edit.action?did=<s:property value="#d.did"/>">编辑</a> </td>
+        <td align="center"><a href="${pageContext.request.contextPath}/department_delete.action?did=<s:property value="#d.did"/>">删除</a> </td>
     </tr>
     </tbody>
     </s:iterator>

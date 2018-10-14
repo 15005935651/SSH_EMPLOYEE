@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!-- 配置c3p0连接池 -->
@@ -47,7 +47,7 @@
     <bean id="departmentAction" class="com.zxx.employee.action.DepartmentAction" scope="prototype">
         <property name="departmentService" ref="departmentService"/>
     </bean>
-    
+
     <!--配置service层-->
     <bean id="employeeService" class="com.zxx.employee.service.impl.EmployeeServiceImpl">
         <property name="employeeDao" ref="employeeDao"/>
@@ -68,10 +68,11 @@
 
 
     <!--配置事物管理器-->
-    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
     <!--开启事物-->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
 </beans>

@@ -3,6 +3,8 @@ package com.zxx.employee.service;
 import com.zxx.employee.domain.Department;
 import com.zxx.employee.domain.PageBean;
 
+import java.util.List;
+
 /**
  * @author zxx
  * @date 2018/10/12 22:11
@@ -17,4 +19,6 @@ public interface DepartmentService {
     void update(Department department);
 
     void delete(Department department);
+
+    List<Department> findAll();
 }

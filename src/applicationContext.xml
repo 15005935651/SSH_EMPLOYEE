@@ -42,6 +42,7 @@
     <!--配置action层-->
     <bean id="employeeAction" class="com.zxx.employee.action.EmployeeAction" scope="prototype">
         <property name="employeeService" ref="employeeService"/>
+        <property name="departmentService" ref="departmentService"/>
     </bean>
 
     <bean id="departmentAction" class="com.zxx.employee.action.DepartmentAction" scope="prototype">

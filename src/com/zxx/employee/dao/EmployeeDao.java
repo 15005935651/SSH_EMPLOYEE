@@ -18,4 +18,6 @@ public interface EmployeeDao {
     int findCount();
 
     List<Employee> findByPage(int begin, int pageSize);
+
+    void save(Employee employee);
 }

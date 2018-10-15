@@ -68,6 +68,12 @@ public class DepartmentServiceImpl implements DepartmentService {
         departmentDao.delete(department);
     }
 
+    @Override
+    public List<Department> findAll() {
+
+        return departmentDao.findALl();
+    }
+
     /**
      * 业务层编辑部门实现
      * 根据部门ID查询部门

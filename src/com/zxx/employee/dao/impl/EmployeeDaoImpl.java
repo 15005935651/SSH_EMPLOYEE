@@ -49,4 +49,13 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
         return list;
     }
 
+    /**
+     * 员工保存信息
+     * @param employee
+     */
+    @Override
+    public void save(Employee employee) {
+        this.getHibernateTemplate().save(employee);
+    }
+
 }

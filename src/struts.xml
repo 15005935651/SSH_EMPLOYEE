@@ -15,7 +15,9 @@
            <result name="input">/index.jsp</result>
            <result name="success" type="redirect">/frame.jsp</result>
            <result name="findAll">jsp/employee/list.jsp</result>
-           <allowed-methods>login,findAll</allowed-methods>
+           <result name="saveUI">jsp/employee/add.jsp</result>
+           <result name="saveSuccess" type="redirectAction">employee_findAll.action</result>
+           <allowed-methods>login,findAll,saveUI,save</allowed-methods>
        </action>
         <action name="department_*" class="departmentAction" method="{1}">
             <result name="findAll">jsp/department/list.jsp</result>

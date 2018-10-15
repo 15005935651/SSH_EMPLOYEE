@@ -24,10 +24,7 @@
 <div class="headerBar">
     <div class="logoBar login_logo">
         <div class="comWidth">
-            <div class="logo fl">
-                <a href="#"><img src="${pageContext.request.contextPath}/images/logo.jpg" alt="员工管理系统"></a>
-            </div>
-            <h3 class="welcome_title">欢迎登陆</h3>
+            <h3 class="welcome_title">欢迎登陆员工管理系统</h3>
         </div>
     </div>
 </div>

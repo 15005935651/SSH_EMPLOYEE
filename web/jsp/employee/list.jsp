@@ -21,7 +21,7 @@
         <td align="center" style="font-size:24px; color:#666"> 员工管理</td>
     </tr>
     <tr>
-        <td align="right"><a href="addEmployee.html">添加</a></td>
+        <td align="right"><a href="${pageContext.request.contextPath}/employee_saveUI.action">添加</a></td>
     </tr>
 </table>
 <br/>
@@ -48,8 +48,7 @@
             <td align="center"><s:date name="#e.birthday" format="yyyy-MM-dd"/></td>
             <td align="center"><s:date name="#e.joinDate" format="yyyy-MM-dd"/></td>
             <td align="center"><s:property value="#e.department.dname"/></td>
-            <td align="center"><a href="editEmployee.html">编辑</a></td>
-
+            <td align="center"><a href="${pageContext.request.contextPath}/employee_edit.action?did=<s:property value="#e.eid"/>">编辑</a></td>
         </tr>
     </s:iterator>
     </tbody>

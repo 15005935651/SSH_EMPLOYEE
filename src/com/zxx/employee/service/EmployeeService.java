@@ -16,4 +16,6 @@ public interface EmployeeService {
     Employee login(Employee employee);
 
     PageBean<Employee> findByPage(Integer currPage);
+
+    void save(Employee employee);
 }

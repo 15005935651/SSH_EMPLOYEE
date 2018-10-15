@@ -4,6 +4,7 @@ import com.zxx.employee.dao.EmployeeDao;
 import com.zxx.employee.domain.Employee;
 import com.zxx.employee.domain.PageBean;
 import com.zxx.employee.service.EmployeeService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 /**
  * y员工管理业务层的实现类
  */
+@Transactional
 public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDao employeeDao;
 
@@ -58,5 +60,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         List<Employee> list = employeeDao.findByPage(begin,pageSize);
         pageBean.setList(list);
         return pageBean;
+    }
+
+    /**
+     * 保存员工方法
+     * @param employee
+     */
+    @Override
+    public void save(Employee employee) {
+        employeeDao.save(employee);
     }
 }

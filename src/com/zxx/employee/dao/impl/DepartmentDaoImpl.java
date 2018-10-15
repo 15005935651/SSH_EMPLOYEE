@@ -65,4 +65,13 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
     public void update(Department department) {
         this.getHibernateTemplate().update(department);
     }
+
+    /**
+     * 查找所有部门
+     * @return
+     */
+    @Override
+    public List<Department> findALl() {
+        return (List<Department>)this.getHibernateTemplate().find("from Department ");
+    }
 }

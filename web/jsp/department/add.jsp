@@ -16,7 +16,7 @@
     </tr>
     <tr>
         <td align="right" >
-            <a href="javascript:document.getElementById('saveFrom').submit()">保存</a> &nbsp;&nbsp;
+            <a href="javascript:document.getElementById('saveForm').submit()">保存</a> &nbsp;&nbsp;
             <a href="javascript:history.go(-1)">退回 </a>
         </td>
     </tr>
@@ -24,7 +24,7 @@
 <br/>
 <br>
 
-<s:form id="saveFrom" action="department_save" method="POST" namespace="/">
+<s:form id="saveForm" action="department_save" method="POST" namespace="/">
 <table style="font-size:16px">
     <tr>
         <td>部门名称：</td>

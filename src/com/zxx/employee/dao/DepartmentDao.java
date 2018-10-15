@@ -21,4 +21,6 @@ public interface DepartmentDao {
     Department findById(Integer did);
 
     void update(Department department);
+
+    List<Department> findALl();
 }

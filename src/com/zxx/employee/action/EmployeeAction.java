@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.zxx.employee.domain.Employee;
+import com.zxx.employee.domain.PageBean;
 import com.zxx.employee.service.EmployeeService;
 
 /**
@@ -40,6 +41,25 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
     public void setEmployeeService(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+
+
+    /**
+     * 当前页数
+     */
+    Integer currPage = 0;
+    public void setCurrPage(Integer currPage) {
+        this.currPage = currPage;
+    }
+
+    /**
+     * 分页查询员工信息
+     */
+    public String findAll(){
+        PageBean<Employee> pageBean = employeeService.findByPage(currPage);
+        ActionContext.getContext().getValueStack().push(pageBean);
+        return "findAll";
+    }
+
 
 
 

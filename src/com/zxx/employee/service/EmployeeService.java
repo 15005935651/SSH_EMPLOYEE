@@ -6,6 +6,7 @@ package com.zxx.employee.service;
  */
 
 import com.zxx.employee.domain.Employee;
+import com.zxx.employee.domain.PageBean;
 
 /**
  *
@@ -13,4 +14,6 @@ import com.zxx.employee.domain.Employee;
  */
 public interface EmployeeService {
     Employee login(Employee employee);
+
+    PageBean<Employee> findByPage(Integer currPage);
 }

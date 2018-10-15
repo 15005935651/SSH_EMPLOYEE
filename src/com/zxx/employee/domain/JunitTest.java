@@ -30,19 +30,29 @@ public class JunitTest {
     @Test
     public void test(){
 
-        Employee employee = new Employee();
-        employee.setEid(001);
-
-        session.save(employee);
+        ss(2);
 
     }
 
     @After
     public void destroy(){
-        transaction.commit();
-        session.close();
-        sessionFactory.close();
 
+    }
+
+    private void ss(int x){
+
+        switch(x){
+            case 3:
+                System.out.println(3);
+                break;
+            case 2:
+                break;
+            case 1:
+                System.out.println(1);
+                break;
+            case 4:
+                System.out.println(4);
+        }
     }
 
 }
